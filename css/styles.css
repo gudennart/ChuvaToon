@@ -5,10 +5,25 @@
     box-sizing: border-box;
     justify-content: center;
 }
+
+@font-face{
+    font-family: 'lubalin graph';
+   src: url("../fonts/itc-lubalin-graph-std-bold.otf") format('opentype');
+}@font-face{
+    font-family: 'Whitney Medium';
+    src: url("../fonts/Whitney-Medium.ttf") format('truetype');
+}
 body {
     font: 400 14px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'lubalin graph', 'Whitney Medium';
     background: whitesmoke;
     width: 100%;
     -webkit-font-smothing: antialiased;
+}
+.font1{
+    font-family: 'lubalin graph';
+}
+
+.font2 {
+    font-family: 'Whitney Medium';
 }
