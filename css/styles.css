@@ -5,7 +5,6 @@
     box-sizing: border-box;
     justify-content: center;
 }
-
 @font-face{
     font-family: 'lubalin graph';
    src: url("../fonts/itc-lubalin-graph-std-bold.otf") format('opentype');
@@ -16,14 +15,187 @@
 body {
     font: 400 14px;
     font-family: 'lubalin graph', 'Whitney Medium';
-    background: whitesmoke;
     width: 100%;
-    -webkit-font-smothing: antialiased;
+    color: white;
 }
-.font1{
-    font-family: 'lubalin graph';
+img {
+    
+    max-width: 100px;
+    max-height: 150px;
+    margin-right: 20px;
+}
+.fullcontainer{
+    margin: 0 10%;
+}
+.header-upper {
+    background-color: black;
+    display: flex;
+}
+.header-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.header-left h2{
+    font-size: 36;
+}
+.content i{
+    background-color: yellow;
+    color: black;
+}
+.publicity {
+    width: 400px;
+    margin: 10px 50px 10px 200px;
+    background-color: green;
+    height: 70px;
 }
 
-.font2 {
-    font-family: 'Whitney Medium';
+.head-graybar{
+    background-color: #4c4c4c;
+    max-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px 10px 0;
+}
+.head-graybar input{
+    background-color: black;
+    border: 0;
+    font-family: 'lubalin graph';
+    text-align: center;
+}
+.today-bar {
+
+    margin-top: 20px;
+    border-top: solid 5px;
+    border-color: #ffea00;
+    background-color: #009ade;
+    font-size: 26px;
+    padding: 5px;
+}
+.middle-columns{
+    margin: 20px 0;
+    display: flex;
+}
+.hour-cards {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+.hour-card {
+    text-align: center;
+    font-size: 30;
+    height: 145px;
+    width: 145px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding-top: 50px;
+    opacity: 0.5;
+}
+.hour-card:hover {
+    opacity: 1.0;
+    cursor: pointer;
+}
+.prog-column {
+    width: 30%;
+    background: #009ade;
+    padding: 30px 20px;
+}
+.hour-title{
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.prog-card {
+    background-color: white;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    color: black;
+    justify-content: space-between;
+    height: 130px;
+}
+.prog-card:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.prog-card p{
+    font-size: 20px;
+    transform: rotate(-90deg);
+}
+.card1{
+    background-color: #009ade;
+}
+.card2{
+    background-color: #ec0080;
+}
+.card3{
+    background-color: #ffea00;
+}
+.right{
+    color: black;
+    font-size: 60px;
+}
+.carrousel-persons img {
+    max-width:150px;
+    max-height:200px;
+    width: auto;
+    height: auto;
+    cursor: pointer;
+}
+.carrousel-persons{
+    background-color: #009ade;
+    border-bottom: solid 10px #ffea00;
+    padding-bottom: 20px;
+}
+.owl-carousel{
+    background-color: #ec0080;
+    height: 170px;
+    padding: 0 50px;
+}
+.footer-graybar {
+    margin-top: 20px;
+    background-color: #4c4c4c;
+    padding: 20px 50px;
+    display: flex;
+    align-items: center;
+    font-size: 14;
+}
+.links {
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.links a {
+    margin: 5px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.owl-nav button span {
+    font-size: 15em;
+    color: black;
+    font-family: Arial;
+    opacity: 0.7;
+}
+.owl-nav button span:hover{
+    opacity: 1;
+}
+.owl-nav button:first-child span{
+    position: absolute;
+    left: -540px;   
+    top: -270px;
+}
+.owl-nav button{
+    position: relative;
+}
+.owl-dots{
+    display: none;
+}
+
+.owl-nav button:last-child span{
+    position: absolute;
+    right: -540px;   
+    top: -270px;
 }
