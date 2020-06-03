@@ -343,12 +343,51 @@ img {
 .backYellow{
     background-color: #ffea00;
     display: flex;
-    justify-content: center;
-    padding: 20px;
-    margin: 50px 0;
+    padding: 20px 0;
+    margin: 50px 0 0 0;
+    justify-content: space-between;
+    width: 100%;
+}
+.headermodal img{
+    background-color: white;
+    max-width: 300px;
+    max-height: 300px;
+    height: auto;
+    width: auto;
+    border: solid 10px #009ade;
+    border-radius: 50%;
+    margin: 0;
 }
 .headermodal{
-    background-color: #009ade;
     display: flex;
     align-items: center;
+    font-size: 40;
+    margin: 0 50px;
+    justify-content: space-between;
+    width: 100%;
+}
+.headertitle{
+    background-color: #009ade;
+    margin: 20px 20px 20px 0;
+    padding: 20px;
+}
+.headerbox{
+    background-color: #009ade;
+    margin: 0 30px;
+    padding: 1px 0 0 0 ;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+    border-radius: 10px;
+    border: solid 2px white;
+}
+.bodymodal, .bottommodal{
+    padding: 20px;
+    border-bottom: solid 5px #ffea00;
+}
+.bodymodal h3, .infos, .bottommodal p{
+    margin: 5px;
+}
+.infos{
+    margin-bottom: 20px;
 }

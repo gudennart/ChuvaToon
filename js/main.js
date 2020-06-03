@@ -193,7 +193,93 @@ window.onload = function () {
 
 
 function preencheModalProg (id){
-    console.log(id)
+    const img = document.querySelector('.headermodal img');
+    const firstTitle = document.querySelector('.headertitle h3');
+    const secondTitle = document.querySelector('.headertitle h4');
+    const slogan = document.querySelector('.headertitle p');
+
+    const ageInd = document.querySelector('.headerbox');
+
+    const dayInfo = document.querySelector('.bodymodal h3');
+    const description = document.querySelector('.bodymodal p');
+
+    const info = document.querySelector('.infos');
+    const ficha = document.querySelector('.fichaCatalografica');
+    ficha.innerHTML=""
+
+    if(id =='01'){
+        img.setAttribute('src', './img/IncrivelGumballnDarwin.png')
+        firstTitle.textContent = "O INCRIVEL MUNDO DE GUMBALL"
+        secondTitle.textContent = "THE AWESOME WORLD OF GUMBALL"
+        slogan.textContent = "Um gato muito doido, fazendo coisas mundo doidas"
+
+        ageInd.textContent = '16'
+
+        dayInfo.textContent = getDiaSemana(today.getDate()+1)+" "+today.getDate()+1;
+
+        description.textContent = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatu  deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem reru'
+
+        info.textContent = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligen"
+
+        let genero = document.createElement('p');
+        genero.textContent = "Gênero: Animação, Comédia";
+        ficha.appendChild(genero);
+        let diretor = document.createElement('p');
+        genero.textContent = "Diretor: Juliana Enrico";
+        ficha.appendChild(diretor);
+        let casting = document.createElement('p');
+        genero.textContent = "Casting: ";
+        ficha.appendChild(casting);
+    }else if(id =='02'){
+        img.setAttribute('src', './img/regularShow.png')
+        firstTitle.textContent = "APENAS UM SHOW"
+        secondTitle.textContent = "REGULAR SHOW"
+        slogan.textContent = "Não sei ao certo, nunca assisti"
+
+        ageInd.textContent = '10'
+
+        dayInfo.textContent = getDiaSemana(today.getDate()+10)+" "+today.getDate()+10;
+
+        description.textContent = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatu  deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem reru'
+
+        info.textContent = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligen"
+
+        let genero = document.createElement('p');
+        genero.textContent = "Gênero: Animação, Comédia";
+        ficha.appendChild(genero);
+        let diretor = document.createElement('p');
+        genero.textContent = "Diretor: Juliana Enrico";
+        ficha.appendChild(diretor);
+        let casting = document.createElement('p');
+        genero.textContent = "Casting: ";
+        ficha.appendChild(casting);
+
+    }else if(id == '03'){
+        img.setAttribute('src', './img/adventureTimeFinn.jpg')
+        firstTitle.textContent = "HORA DE AVENTURA"
+        secondTitle.textContent = "ADVENTURE'S TIME"
+        slogan.textContent = "Um cachorro boladão e um cara cabeludo"
+
+        ageInd.textContent = '18'
+
+        dayInfo.textContent = getDiaSemana(today.getDate()+5)+" "+today.getDate()+5;
+
+        description.textContent = 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatu  deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem reru'
+
+        info.textContent = "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligen"
+
+
+        let genero = document.createElement('p');
+        genero.textContent = "Gênero: Animação, Comédia";
+        ficha.appendChild(genero);
+        let diretor = document.createElement('p');
+        diretor.textContent = "Diretor: Juliana Enrico";
+        ficha.appendChild(diretor);
+        let casting = document.createElement('p');
+        casting.textContent = "Casting: ";
+        ficha.appendChild(casting);
+
+    }
 }
 
 function monitoraChar(){
@@ -482,9 +568,6 @@ var progmodal = document.getElementById("progModal");
 var btn = document.getElementById("myBtn");
 var progspan = document.getElementsByClassName("progclose")[0];
 
-btn.onclick = function() {
-    progmodal.style.display = "block";
-}
 
 progspan.onclick = function() {
     progmodal.style.display = "none";
