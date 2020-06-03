@@ -183,7 +183,7 @@ window.onload = function () {
 
     monitoraChar();
     
-    atualizaProg(today.getHours(), today.getDate());
+    atualizaProg(today.getHours(), today.getDate(), false);
 
 
     document.getElementsByClassName('right')[0].addEventListener('click', ()=>{
@@ -213,7 +213,7 @@ function preencheModalProg (id){
         secondTitle.textContent = "THE AWESOME WORLD OF GUMBALL"
         slogan.textContent = "Um gato muito doido, fazendo coisas mundo doidas"
 
-        ageInd.textContent = '16'
+        ageInd.textContent = '16 '
 
         dayInfo.textContent = getDiaSemana(today.getDate()+1)+" "+today.getDate()+1;
 
@@ -236,7 +236,7 @@ function preencheModalProg (id){
         secondTitle.textContent = "REGULAR SHOW"
         slogan.textContent = "Não sei ao certo, nunca assisti"
 
-        ageInd.textContent = '10'
+        ageInd.textContent = '10 '
 
         dayInfo.textContent = getDiaSemana(today.getDate()+10)+" "+today.getDate()+10;
 
@@ -255,12 +255,12 @@ function preencheModalProg (id){
         ficha.appendChild(casting);
 
     }else if(id == '03'){
-        img.setAttribute('src', './img/adventureTimeFinn.jpg')
+        img.setAttribute('src', './img/adventureTimeFinnModal.jpg')
         firstTitle.textContent = "HORA DE AVENTURA"
         secondTitle.textContent = "ADVENTURE'S TIME"
         slogan.textContent = "Um cachorro boladão e um cara cabeludo"
 
-        ageInd.textContent = '18'
+        ageInd.textContent = '18 '
 
         dayInfo.textContent = getDiaSemana(today.getDate()+5)+" "+today.getDate()+5;
 
@@ -295,7 +295,7 @@ function monitoraChar(){
 };
 
 function preencheModalChar(name){
-    const img = document.querySelector('.upper-content img')
+    const img = document.querySelector('.upper-wrapper img')
     const firstName = document.querySelector('.upper-content h3')
     const secName = document.querySelector('.upper-content h4')
     const upperbox = document.getElementsByClassName('upper-box')[0]
@@ -304,7 +304,7 @@ function preencheModalChar(name){
 
 
     if(name == "ADT"){
-        img.setAttribute('src', './img/adventureTimeCard.png')
+        img.setAttribute('src', './img/adventureTimeFinnModal.jpg')
         firstName.textContent = 'HORA DE AVENTURA'
         secName.textContent = "ADVENTURE'S TIME"
         upperbox.textContent = '16'
@@ -328,7 +328,7 @@ function preencheModalChar(name){
         }
 
     }else if(name == 'CLA'){
-        img.setAttribute('src', './img/clarencio.png')
+        img.setAttribute('src', './img/clarenciomodal.png')
         firstName.textContent = 'CLARENCIO, O OTIMISTA'
         secName.textContent = "CLARENCE"
         upperbox.textContent = '10'
@@ -376,7 +376,7 @@ function preencheModalChar(name){
         }
 
     }else if(name == 'JOR'){
-        img.setAttribute('src', './img/jorelbrother.png')
+        img.setAttribute('src', './img/jorelbrothermodal.png')
         firstName.textContent = 'O IRMÃO DO JOREL'
         secName.textContent = "JOREL'S BROTHER"
         upperbox.textContent = '10'
@@ -400,7 +400,7 @@ function preencheModalChar(name){
         }
 
     }else if(name == 'STE'){
-        img.setAttribute('src', './img/Stevenyoung.jpg')
+        img.setAttribute('src', './img/StevenUniversemodal.png')
         firstName.textContent = 'STEVEN UNIVERSO'
         secName.textContent = "STEVEN UNIVERSE"
         upperbox.textContent = '16'
@@ -471,12 +471,12 @@ function monitoraCards() {
         const element = listCards[k];
 
         element.addEventListener("click", () => {
-            atualizaProg(element.getAttribute("id"), dayBase);
+            atualizaProg(element.getAttribute("id"), dayBase, true);
         }, false);
     };
 }
 
-function atualizaProg(hour, day) {
+function atualizaProg(hour, day, first) {
     let hourCards = document.getElementsByClassName("hour-card");
     let ProgBar = document.getElementsByClassName('prog-column')[0];
 
@@ -487,6 +487,9 @@ function atualizaProg(hour, day) {
     hourNode.textContent = hour + 'h';
     ProgBar.appendChild(hourNode);
 
+    if (first){
+        ProgBar.style.opacity = "1"
+    }     
 
     for (let i = 0; i < hourCards.length; i++) {
         const element = hourCards[i];

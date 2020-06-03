@@ -62,6 +62,7 @@ img {
     border: 0;
     font-family: 'lubalin graph';
     text-align: center;
+    color: white;
 }
 .today-bar {
 
@@ -100,6 +101,7 @@ img {
     width: 30%;
     background: #009ade;
     padding: 30px 20px;
+    opacity: 0.5;
 }
 .hour-title{
     font-size: 48px;
@@ -234,11 +236,16 @@ img {
   
   /* The Close Button */
   .charclose {
-    color: #aaa;
+    color: white;
     float: right;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
-    background-color: #ec0080
+    background-color: #ec0080;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    margin: 10px;
   }
   
   .charclose:hover,
@@ -250,7 +257,7 @@ img {
 
 .upper-wrapper {
     background-color: #ffea00;
-    margin: 30px 0;
+    margin: 50px 0;
     padding: 30px;
     display: flex;
     align-items: center;
@@ -258,15 +265,15 @@ img {
 .upper-content{
     background-color: #ec0080;
     width: 100%;
-    padding-top: 50px;
     font-size: 36px;
     text-align: center;
 }
-.upper-content img{
-    padding: 0 ;
+.upper-wrapper img{
     float: left;
-    border: solid white 5px;
-    max-height: 100px;
+    background-color: white;
+    border: solid #ec0080 5px;
+    border-radius: 50%;
+    max-height: 200px;
     max-width: 200px;
     width: auto;
     height: auto;
@@ -331,6 +338,7 @@ img {
     height: 30px;
     width: 30px;
     text-align: center;
+    margin: 10px;
   }
   
   .progclose:hover,
@@ -350,8 +358,8 @@ img {
 }
 .headermodal img{
     background-color: white;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 200px;
+    max-height: 200px;
     height: auto;
     width: auto;
     border: solid 10px #009ade;
@@ -361,7 +369,6 @@ img {
 .headermodal{
     display: flex;
     align-items: center;
-    font-size: 40;
     margin: 0 50px;
     justify-content: space-between;
     width: 100%;
@@ -371,15 +378,21 @@ img {
     margin: 20px 20px 20px 0;
     padding: 20px;
 }
+.headertitle h3{
+    font-size: 44px;
+}
+.headertitle h4{
+    font-size: 38px;
+}
 .headerbox{
     background-color: #009ade;
-    margin: 0 30px;
     padding: 1px 0 0 0 ;
     height: 60px;
     width: 60px;
     text-align: center;
     border-radius: 10px;
     border: solid 2px white;
+    font-size: 38;
 }
 .bodymodal, .bottommodal{
     padding: 20px;
