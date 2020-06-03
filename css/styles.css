@@ -204,9 +204,151 @@ img {
 .owl-dots{
     display: none;
 }
-
 .owl-nav button:last-child span{
     position: absolute;
     right: -540px;   
     top: -270px;
+}
+.charmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .charmodal-content {
+    background-color: #009ade;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px 0; 
+    border: 1px solid #888;
+    border-radius: 5px;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .charclose {
+    color: #aaa;
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #ec0080
+  }
+  
+  .charclose:hover,
+  .charclose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;;
+  }
+
+.upper-wrapper {
+    background-color: #ffea00;
+    margin: 30px 0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+}
+.upper-content{
+    background-color: #ec0080;
+    width: 100%;
+    padding-top: 50px;
+    font-size: 36px;
+    text-align: center;
+}
+.upper-content img{
+    padding: 0 ;
+    float: left;
+    border: solid white 5px;
+    max-height: 100px;
+    max-width: 200px;
+    width: auto;
+    height: auto;
+}
+.upper-box{
+    font-size: 40px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #009ade;
+    border: solid 3px white;
+    height: fit-content;
+    margin: 0 20px;
+}
+.bottom{
+    display: flex;
+}
+.cardCalendar{
+    height: 100px;
+    width: 100px;
+    text-align: center;
+    background-color: white;
+    color: #ec0080;
+    padding: 20px;
+    margin: 15px;
+}
+.cardCalendar p:last-child{
+    color: #ffea00;
+}
+
+/* The Modal (background) */
+.progmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .progmodal-content {
+    background-color: #ec0080;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px 0;
+    border: 1px solid #888;
+    border-radius: 15px;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .progclose {
+    color: white;
+    float: right;
+    font-size: 26px;
+    font-weight: bold;
+    background-color: #009ade;
+    border-radius: 5px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+  }
+  
+  .progclose:hover,
+  .progclose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+.backYellow{
+    background-color: #ffea00;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 50px 0;
+}
+.headermodal{
+    background-color: #009ade;
+    display: flex;
+    align-items: center;
 }

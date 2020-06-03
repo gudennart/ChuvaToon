@@ -58,24 +58,28 @@ function getProgramacao(hour, day) {
 
             if (element.getAttribute("class").substr(-1) == "1") {
                 let prog = {
+                    id: '01',
                     hour: '23:00',
                     img: 'IncrivelGumballnDarwin.png',
                     name: 'O Incrível Mundo de Gumball'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '01',
                     hour: '23:15',
                     img: 'IncrivelGumballnDarwin.png',
                     name: 'O Incrível Mundo de Gumball'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '01',
                     hour: '23:30',
                     img: 'IncrivelGumballnDarwin.png',
                     name: 'O Incrível Mundo de Gumball'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '01',
                     hour: '23:45',
                     img: 'IncrivelGumballnDarwin.png',
                     name: 'O Incrível Mundo de Gumball'
@@ -84,24 +88,28 @@ function getProgramacao(hour, day) {
             }
             else if (element.getAttribute("class").substr(-1) == "2") {
                 let prog = {
+                    id: '02',
                     hour: '22:00',
                     img: 'regularShowSeriously.png',
                     name: 'Apenas um Show'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '02',
                     hour: '22:15',
                     img: 'regularShowSeriously.png',
                     name: 'Apenas um Show'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '02',
                     hour: '22:30',
                     img: 'regularShowSeriously.png',
                     name: 'Apenas um Show'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '02',
                     hour: '22:45',
                     img: 'regularShowSeriously.png',
                     name: 'Apenas um Show'
@@ -110,24 +118,28 @@ function getProgramacao(hour, day) {
             }
             else {
                 let prog = {
+                    id: '03',
                     hour: '08:00',
                     img: 'adventureTimeCard.png',
                     name: 'Hora de Aventura'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '03',
                     hour: '08:15',
                     img: 'adventureTimeCard.png',
                     name: 'Hora de Aventura'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '03',
                     hour: '08:30',
                     img: 'adventureTimeCard.png',
                     name: 'Hora de Aventura'
                 }
                 listProg.push(prog);
                 prog = {
+                    id: '03',
                     hour: '08:45',
                     img: 'adventureTimeCard.png',
                     name: 'Hora de Aventura'
@@ -162,17 +174,194 @@ setInterval(() => {
 
 
 window.onload = function () {
+    
     dayBase = today.getDate()
 
     printDay();
     
     monitoraCards();
 
+    monitoraChar();
+    
     atualizaProg(today.getHours(), today.getDate());
+
 
     document.getElementsByClassName('right')[0].addEventListener('click', ()=>{
         sumDay();
     }, false);
+}
+
+
+function preencheModalProg (id){
+    console.log(id)
+}
+
+function monitoraChar(){
+    let chars = document.getElementsByClassName('item');
+
+    for (let l = 0; l < chars.length; l++) {
+        const char = chars[l];
+        char.addEventListener('click', ()=>{
+            preencheModalChar(char.getAttribute('id'));
+            charmodal.style.display = "block";
+        }, false)
+    }
+};
+
+function preencheModalChar(name){
+    const img = document.querySelector('.upper-content img')
+    const firstName = document.querySelector('.upper-content h3')
+    const secName = document.querySelector('.upper-content h4')
+    const upperbox = document.getElementsByClassName('upper-box')[0]
+    const bottom = document.getElementsByClassName('bottom')[0]
+    bottom.innerHTML= ""
+
+
+    if(name == "ADT"){
+        img.setAttribute('src', './img/adventureTimeCard.png')
+        firstName.textContent = 'HORA DE AVENTURA'
+        secName.textContent = "ADVENTURE'S TIME"
+        upperbox.textContent = '16'
+
+        for (let m = 0; m < 8; m++) {
+            let cardCalendar = document.createElement('div');
+            cardCalendar.setAttribute('class', 'cardCalendar')
+            bottom.appendChild(cardCalendar);
+
+            let firstp = document.createElement('p')
+            firstp.textContent = getDiaSemana(m+10);
+            cardCalendar.appendChild(firstp);
+
+            let secondp = document.createElement('p')
+            secondp.textContent = m+10;
+            cardCalendar.appendChild(secondp);
+
+            let thirdp = document.createElement('p')
+            thirdp.textContent = "22:00";
+            cardCalendar.appendChild(thirdp);
+        }
+
+    }else if(name == 'CLA'){
+        img.setAttribute('src', './img/clarencio.png')
+        firstName.textContent = 'CLARENCIO, O OTIMISTA'
+        secName.textContent = "CLARENCE"
+        upperbox.textContent = '10'
+
+        for (let m = 0; m < 8; m++) {
+            let cardCalendar = document.createElement('div');
+            cardCalendar.setAttribute('class', 'cardCalendar')
+            bottom.appendChild(cardCalendar);
+
+            let firstp = document.createElement('p')
+            firstp.textContent = getDiaSemana(m+15);
+            cardCalendar.appendChild(firstp);
+
+            let secondp = document.createElement('p')
+            secondp.textContent = m+15;
+            cardCalendar.appendChild(secondp);
+
+            let thirdp = document.createElement('p')
+            thirdp.textContent = "09:00";
+            cardCalendar.appendChild(thirdp);
+        }
+
+    }else if(name == 'GUM'){
+        img.setAttribute('src', './img/IncrivelGumballnDarwin.png')
+        firstName.textContent = 'INCRIVEL MUNDO DE GUMBALL'
+        secName.textContent = "The Amazing World of Gumball"
+        upperbox.textContent = '14'
+
+        for (let m = 0; m < 8; m++) {
+            let cardCalendar = document.createElement('div');
+            cardCalendar.setAttribute('class', 'cardCalendar')
+            bottom.appendChild(cardCalendar);
+
+            let firstp = document.createElement('p')
+            firstp.textContent = getDiaSemana(m);
+            cardCalendar.appendChild(firstp);
+
+            let secondp = document.createElement('p')
+            secondp.textContent = m;
+            cardCalendar.appendChild(secondp);
+
+            let thirdp = document.createElement('p')
+            thirdp.textContent = "20:00";
+            cardCalendar.appendChild(thirdp);
+        }
+
+    }else if(name == 'JOR'){
+        img.setAttribute('src', './img/jorelbrother.png')
+        firstName.textContent = 'O IRMÃO DO JOREL'
+        secName.textContent = "JOREL'S BROTHER"
+        upperbox.textContent = '10'
+
+        for (let m = 0; m < 8; m++) {
+            let cardCalendar = document.createElement('div');
+            cardCalendar.setAttribute('class', 'cardCalendar')
+            bottom.appendChild(cardCalendar);
+
+            let firstp = document.createElement('p')
+            firstp.textContent = getDiaSemana(m+5);
+            cardCalendar.appendChild(firstp);
+
+            let secondp = document.createElement('p')
+            secondp.textContent = m+5;
+            cardCalendar.appendChild(secondp);
+
+            let thirdp = document.createElement('p')
+            thirdp.textContent = "18:00";
+            cardCalendar.appendChild(thirdp);
+        }
+
+    }else if(name == 'STE'){
+        img.setAttribute('src', './img/Stevenyoung.jpg')
+        firstName.textContent = 'STEVEN UNIVERSO'
+        secName.textContent = "STEVEN UNIVERSE"
+        upperbox.textContent = '16'
+
+        for (let m = 0; m < 8; m++) {
+            let cardCalendar = document.createElement('div');
+            cardCalendar.setAttribute('class', 'cardCalendar')
+            bottom.appendChild(cardCalendar);
+
+            let firstp = document.createElement('p')
+            firstp.textContent = getDiaSemana(m+7);
+            cardCalendar.appendChild(firstp);
+
+            let secondp = document.createElement('p')
+            secondp.textContent = m+7;
+            cardCalendar.appendChild(secondp);
+
+            let thirdp = document.createElement('p')
+            thirdp.textContent = "23:00";
+            cardCalendar.appendChild(thirdp);
+        }
+
+    }else if(name == 'RSH'){
+        img.setAttribute('src', './img/regularShow.png')
+        firstName.textContent = 'APENAS UM SHOW'
+        secName.textContent = "REGULAR SHOW"
+        upperbox.textContent = '12'
+
+        for (let m = 0; m < 8; m++) {
+            let cardCalendar = document.createElement('div');
+            cardCalendar.setAttribute('class', 'cardCalendar')
+            bottom.appendChild(cardCalendar);
+
+            let firstp = document.createElement('p')
+            firstp.textContent = getDiaSemana(m+2);
+            cardCalendar.appendChild(firstp);
+
+            let secondp = document.createElement('p')
+            secondp.textContent = m+2;
+            cardCalendar.appendChild(secondp);
+
+            let thirdp = document.createElement('p')
+            thirdp.textContent = "18:00";
+            cardCalendar.appendChild(thirdp);
+        }
+
+    }
 }
 
 function sumDay(){
@@ -237,7 +426,7 @@ function atualizaProg(hour, day) {
                 const prog = listProg[j];
 
                 let ProgCard = document.createElement('div');
-                ProgCard.setAttribute('class', 'prog-card')
+                ProgCard.setAttribute('class', 'prog-card ')
                 ProgBar.appendChild(ProgCard);
 
                 let hourText = document.createElement('p');
@@ -254,7 +443,8 @@ function atualizaProg(hour, day) {
                 ProgCard.appendChild(name);
 
                 ProgCard.addEventListener("click", () => {
-                    console.log('clickado ', j)
+                    preencheModalProg(prog.id);
+                    progmodal.style.display = "block";
                 }, false);
             }
         }
@@ -270,4 +460,32 @@ function atualizaProg(hour, day) {
             }
         }
     }
+}
+
+var charmodal = document.getElementById("charModal");
+var charspan = document.getElementsByClassName("charclose")[0];
+
+charspan.onclick = function() {
+  charmodal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == charmodal) {
+    charmodal.style.display = "none";
+  }
+  else if (event.target == progmodal) {
+    progmodal.style.display = "none";
+  }
+}
+
+var progmodal = document.getElementById("progModal");
+var btn = document.getElementById("myBtn");
+var progspan = document.getElementsByClassName("progclose")[0];
+
+btn.onclick = function() {
+    progmodal.style.display = "block";
+}
+
+progspan.onclick = function() {
+    progmodal.style.display = "none";
 }
